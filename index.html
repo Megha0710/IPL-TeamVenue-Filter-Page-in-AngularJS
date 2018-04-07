@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body ng-app="myApp">
+	<div  class="container">
+		<div ng-controller="myCtrl"  ng-init="checkFavTeam()">
+			<div class="col-sm-12">
+				<h3>Indian Premier League</h3>
+			</div>
+			<div class="col-sm-12">
+			<div class="col-sm-8 venueBox" >
+				<h4>Filter By Venue</h4>
+				<div class="values">
+					<span class="vbVals"  ng-repeat="(key,value) in venues" ng-model="key" ng-click="flag(key)" ng-class="{mystyle: $index == selected}" >
+						<a  ng-click="myFunction($index)">{{value.name}}</a>
+					</span>
+					<span>
+						<button class="btn btn-primary" ng-click="resetVenue()">Reset</button>
+					</span>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<label class="favTeamlabel">To get latest updates of your favourite team select your team!!</label>
+				<div class="dropdown">
+				<select class="selectFavTeam" ng-model="selectedValue" ng-change="setFavTeam(selectedValue)">
+					<option value="" disabled>Select</option>
+					<option ng-repeat="(key, value) in teams" value="{{key}}">{{value.name}}</option>
+				</select>
+				<p ng-show="favTeamFlag" class="alert alert-success" style="margin-top:4px;padding:6px">Your favourite team is:<label> {{ft}}</label></p>
+			</div>
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<div class="col-sm-8 teamBox">
+				<h4 >Filter By Team</h4>
+				<div class="values">
+					<span class="tmVals" ng-repeat="(key,value) in teams" ng-model="key" ng-click="tflag(key)"  ng-class="{mystyle: $index == selectedt}" >
+						<a ng-click="myFunctionT($index)">{{value.s_name}}</a>
+					</span>
+					<button class="btn btn-primary" ng-click="resetTeam()">Reset</button>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<label>To disable favourite team</label>
+				<div>
+				<button class="btn btn-primary" ng-click="removefavTeam()">Remove favourite Team</button>
+			</div>
+			</div>
+</div>
+			<div class="col-sm-12">
+				<h4 ng-show="favTeamMsg">Latest updates of your favourite team: {{ftOnload}}</h4>
+			<div class="col-sm-4 "  ng-repeat="match in matches | filterVenue:venueKey:venueFlag:teamKey:teamFlag ">
+				<div class="matchCards">
+					<div class="matchHeadings">
+						<span  ng-init="t1=getTeamName(match.team1_id)" >{{t1}}</span>
+						<span>vs</span>
+						<span  ng-init="t2=getTeamName(match.team2_id)" >{{t2}},</span>
+						<span ng-bind="match.id |ordinal:match.id">Match<span>
+						</div>
+						<div class="matchContent">
+							<div><label>Date : </label>{{(match.header.start_time*1000) | date: "fullDate"}}</div>
+							<div ng-init="v=getVenueName(match.venue_id)"><label>Venue : </label>{{v}}</div>
+							<div><label>Status : </label>{{match.header.status}}</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src="cbinterview.js"></script>
+</html>
