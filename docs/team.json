@@ -1,0 +1,62 @@
+{
+    "58": {
+        "name": "Chennai Super Kings",
+        "s_name": "CSK"
+    },
+    "59" :{
+        "name": "Royal Challengers Bangalore",
+        "s_name": "RCB"
+    },
+    "61" : {
+        "name": "Delhi Daredevils",
+        "s_name": "DD"
+    },
+    "62" : {
+        "name": "Mumbai Indians",
+        "s_name": "MI"
+    },
+    "63" : {
+        "name": "Kolkata Knight Riders",
+        "s_name": "KKR"
+    },
+    "64" : {
+        "name": "Rajasthan Royals",
+        "s_name": "RR"
+    },
+    "255" : {
+        "name": "Sunrisers Hyderabad",
+        "s_name": "SRH"
+    },
+    "65" : {
+        "name": "Kings XI Punjab",
+        "s_name": "KXIP"
+    }
+}
+
+
+
+app.filter('venueFilter', function () {
+  return function (items) {
+    var filteredMatches = [];
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      if (item==$scope.matches.venue_id) {
+        filteredMatches.push(item);
+      }
+    }
+    return filteredMatches;
+  };
+});
+
+app.filter('teamFilter', function () {
+  return function (items) {
+    var filteredMatches = [];
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      if (item==$scope.matches.team1_id || item==$scope.matches.team2_id ) {
+        filteredMatches.push(item);
+      }
+    }
+    return filteredMatches;
+  };
+});

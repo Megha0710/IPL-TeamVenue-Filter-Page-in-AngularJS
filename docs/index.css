@@ -1,0 +1,108 @@
+
+h4{
+margin-top: 0px;
+margin-bottom: 25px;
+margin-left: -15px ;
+margin-right: -15px;
+height: 40px;
+color: white;
+border: 1px solid transparent;
+background-color: #2c4e86;
+border-color: #243f6d;
+padding: 10px
+}
+.values
+{
+	margin-bottom: 17px;
+}
+body {
+    background: #E4E8EB;
+		
+}
+.matchHeadings{
+border-bottom: 2px solid lightblue;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-left: 10px;
+    height: 31px;
+		background-color: lightblue;
+		    font-family: verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+				color:blue;
+	}
+.matchCards{
+	border: 2px solid lightblue;
+	height:120px;
+	margin-left:0px;
+	border-radius: 3px;
+	margin-bottom: 20px;
+box-shadow: 5px 10px 15px #888888
+}
+.matchContent{
+margin-left: 10px;
+margin-top: 7px;
+font-size: 13px;
+}
+a:focus  {
+    outline: 0;
+    color: red;
+}
+.alpha
+{
+	background-color: red;
+}
+.venueBox
+{
+	border: 1px solid blue;
+	margin-bottom:10px;
+	border-radius: 3px;
+	background-color: #f8f8f8
+}
+.vbVals
+{
+	border-radius: 3px;
+	padding:4px;
+	display:inline-block;
+	background-color: #f8f8f8;border: 1px solid #cccccc;
+	text-align:center
+}
+.tmVals
+{
+	border: 1px solid red;
+	display:inline-block;
+	background-color: #f8f8f8;border: 1px solid #cccccc;
+	width:50px;
+	text-align:center;
+	padding:4px
+}
+ a{
+	margin-right: 5px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.teamBox
+{
+	border: 1px solid blue;
+	margin-bottom:20px;
+	margin-top:10px;
+	border-radius: 3px;
+	background-color: #f8f8f8;
+}
+.mystyle
+{
+  background-color: #E4E8EB;
+}
+.selectFavTeam
+{
+	background-color: #f8f8f8;
+border-color: blue;
+font-size: 14px;
+color: #337ab7;
+width: 88%;
+height: 30px;
+border-radius: 2px;
+    cursor: pointer
+}
+.favTeamlabel
+{
+	   font-size: 24px
+}
